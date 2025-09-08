@@ -1,7 +1,14 @@
 #takes a string and counts how many words are in it
 def word_count(book_text):
-    num_words = 0
     text_list = book_text.split()
-    for word in text_list:
-        num_words += 1
-    return num_words
+    return len(text_list)
+
+def character_count(book_text):
+    characters = {}
+    for char in book_text:
+        lowchar = char.lower()
+        try:
+            characters[lowchar] += 1
+        except KeyError:
+            characters[lowchar] = 1
+    return characters

@@ -12,3 +12,19 @@ def character_count(book_text):
         except KeyError:
             characters[lowchar] = 1
     return characters
+
+def sort_on(items):
+    return items["num"]
+
+def dictionary_sorter(dictionary):
+    sorted_list = []
+    for char in dictionary:
+        temp_dict = {}
+        temp_dict = {
+            "char": char, "num": dictionary[char]
+        }
+        sorted_list.append(temp_dict)
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
+
+
